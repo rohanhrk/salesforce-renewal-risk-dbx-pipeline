@@ -147,7 +147,7 @@ def execute_statement(
             host=host,
             token=token,
             method="GET",
-            Path=f"/api/2.0/sql/statements/{statement_id}",
+            path=f"/api/2.0/sql/statements/{statement_id}",
         )
         status = result.status.get("status", {})
         state = status.get("state")
