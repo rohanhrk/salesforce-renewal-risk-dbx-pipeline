@@ -35,7 +35,7 @@ variables:
 
 targets:
   dev:
-    mode: developement
+    mode: development
     default: true
     variables:
       catalog: renewal_risk_lakehouse
