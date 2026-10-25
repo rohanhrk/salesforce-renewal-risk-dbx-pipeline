@@ -149,7 +149,7 @@ def execute_statement(
             method="GET",
             path=f"/api/2.0/sql/statements/{statement_id}",
         )
-        status = result.status.get("status", {})
+        status = result.get("status", {})
         state = status.get("state")
 
         if state in {"SUCCEEDED", "CLOSED"}:
