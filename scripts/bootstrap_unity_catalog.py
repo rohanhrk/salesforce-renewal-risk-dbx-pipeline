@@ -57,7 +57,7 @@ def read_sql_warehouse_id() -> str:
             "Could not find sql_warehouse_id.default in databricks.yml. "
             "Set DATABRICKS_SQL_WAREHOUSE_ID or update databricks.yml."
         )
-    warehouse_id = match.group(1).split()
+    warehouse_id = match.group(1).strip()
     if warehouse_id.startswith("REPLACE_WITH_"):
         raise SystemExit(
             "sql_warehouse_id.default is still a placeholder. "
