@@ -26,32 +26,32 @@ resources:
         connection_name: ${var.salesforce_connection}
         objects:
           - table:
-            source_schema: objects
-            source_table: Account
-            destination_catalog: ${var.catalog}
-            destination_schema: ${var.raw_schema}
-            destination_table: Account
+              source_schema: objects
+              source_table: Account
+              destination_catalog: ${var.catalog}
+              destination_schema: ${var.raw_schema}
+              destination_table: Account
           - table:
-            source_schema: objects
-            source_table: Contact
-            destination_catalog: ${var.catalog}
-            destination_schema: ${var.raw_schema}
-            destination_table: Contact
+              source_schema: objects
+              source_table: Contact
+              destination_catalog: ${var.catalog}
+              destination_schema: ${var.raw_schema}
+              destination_table: Contact
           - table:
-            source_schema: objects
-            source_table: Opportunity
-            destination_catalog: ${var.catalog}
-            destination_schema: ${var.raw_schema}
-            destination_table: Opportunity
+              source_schema: objects
+              source_table: Opportunity
+              destination_catalog: ${var.catalog}
+              destination_schema: ${var.raw_schema}
+              destination_table: Opportunity
           - table:
-            source_schema: objects
-            source_table: Case
-            destination_catalog: ${var.catalog}
-            destination_schema: ${var.raw_schema}
-            destination_table: Case
+              source_schema: objects
+              source_table: Case
+              destination_catalog: ${var.catalog}
+              destination_schema: ${var.raw_schema}
+              destination_table: Case
           - table:
-            source_schema: objects
-            source_table: Product_Usage__c
-            destination_catalog: ${var.catalog}
-            destination_schema: ${var.raw_schema}
-            destination_table: Product_Usage__c
+              source_schema: objects
+              source_table: Product_Usage__c
+              destination_catalog: ${var.catalog}
+              destination_schema: ${var.raw_schema}
+              destination_table: Product_Usage__c
