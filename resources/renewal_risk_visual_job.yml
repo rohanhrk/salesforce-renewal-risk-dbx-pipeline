@@ -1,0 +1,22 @@
+resources:
+  jobs:
+    job_renewal_risk_daily_refresh:
+      name: job_renewal_risk_daily_refresh_${bundle.target}
+      max_concurrent_runs: 1
+      tasks:
+        - task_key: refresh_salesforce_ingestion
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.lfc_salesforce_ingestion.id}
+            # Keep scheduled runs incremental. Use full refresh only for a
+            # deliberate repair/backfill run.
+            full_refresh: false
+          
+        - task_key: run_renewal_risk_visual_data_prep
+          depends_on:
+            - task_key: refresh_salesforce_ingestion
+          notebook_task:
+            notebook_path: ../designer/renewal_risk_visual_data_prep.designer.ipynb
+            base_parameters:
+              catalog: ${var.catalog}
+              raw_schema: ${var.raw_schema}
+              pipeline_schema: ${var.pipeline_schema}
